@@ -1,0 +1,337 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>品创文档助手 - 您阅读文档的好帮手</title>
+    <script type="module" crossorigin="" src="static/js/index-82138e4a.js"></script>
+    <style>[v-clock]{
+        display:none !important;
+    }</style>
+    <link rel="stylesheet" href="static/css/index-c4379658.css">
+</head>
+
+<body >
+    <div id="root" data-v-app="" v-clock>
+        <main data-v-7cf59f00="">
+            <!-- logo -->
+            <div data-v-7cf59f00="" class="logo">
+                <img data-v-7cf59f00="" src="./static/images/logo.png" alt="logo" width="100">
+            </div>
+
+            <section data-v-b6abd06f="" class="el-container is-vertical" style="max-width: 960px; margin: 0px auto;">
+                <h1 data-v-b6abd06f=""> 品创文档助手 <br data-v-b6abd06f=""> 只需上传文档 AI自动分析并回答你的问题 </h1>
+                <main data-v-b6abd06f="" class="el-main">
+                    <el-card shadow="never" style="width: 100%">
+                        <el-upload
+                        class="upload-demo"
+                        drag
+                        accept=".pdf"
+                        action="/api/doc/upload"
+                        :file-list="fileList"
+                        :on-success="uploadText"
+                        :on-preview="handlePreViewFile"
+                        :multiple="false">
+                        <i class="el-icon-upload"></i>
+                        <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+                        <div class="el-upload__tip" slot="tip">目前仅支持.pdf文件</div>
+                        </el-upload>
+                    </el-card>
+                    <!---->
+                    <div data-v-f9cc3aca="" data-v-b6abd06f="" class="el-row introduction" style="margin-left: -10px; margin-right: -10px;">
+                        <div data-v-f9cc3aca="" class="el-col el-col-24 el-col-xs-24 el-col-sm-8 is-guttered" style="padding-right: 10px; padding-left: 10px;">
+                            <div data-v-f9cc3aca="" class="el-card is-never-shadow box-card">
+                                <!--v-if-->
+                                <div class="el-card__body" style="">
+                                    <h3 data-v-f9cc3aca="">对于学生 🎓</h3>
+                                    <p data-v-f9cc3aca="">课程太复杂或资料太多了？这里可以回答您关于教材、讲义和 PPT 中的内容，不必花费大量时间在资料检索上。</p>
+                                    <p data-v-f9cc3aca="">论文资料太多太杂？上传文档，找到您需要的信息，快速完成学术论文，省心省力。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-f9cc3aca="" class="el-col el-col-24 el-col-xs-24 el-col-sm-8 is-guttered" style="padding-right: 10px; padding-left: 10px;">
+                            <div data-v-f9cc3aca="" class="el-card is-never-shadow box-card">
+                                <!--v-if-->
+                                <div class="el-card__body" style="">
+                                    <h3 data-v-f9cc3aca="">在工作中 🏢</h3>
+                                    <p data-v-f9cc3aca="">高效检索文档信息，包括但不限于商业分析报告、培训材料和法律文件，您的问题可以快速得到解答，不必再翻阅上百页的文档找信息</p>
+                                    <p data-v-f9cc3aca="">AI 的回答会将来源页码标注出来，便于您回查原文。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-f9cc3aca="" class="el-col el-col-24 el-col-xs-24 el-col-sm-8 is-guttered" style="padding-right: 10px; padding-left: 10px;">
+                            <div data-v-f9cc3aca="" class="el-card is-never-shadow box-card">
+                                <!--v-if-->
+                                <div class="el-card__body" style="">
+                                    <h3 data-v-f9cc3aca="">关于 品创文档助手</h3>
+                                    <p data-v-f9cc3aca="">无限智慧，无限可能。我们的AI将帮助您快速回答任何问题，从而提高效率。我们的产品专门针对中文用户做了优化,中文友好型产品</p>
+                                    <p data-v-f9cc3aca="">您的所有对话记录均存储在本地，服务器不会记录，确保您的隐私。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer data-v-b6abd06f="" class="el-footer">
+                    <div data-v-9098797a="" style="text-align: center; color: black;">
+                        <a data-v-9098797a="" class="el-link el-link--default is-underline">                          
+                        <!-- 联系我们 点增加击事件 --> 
+                        <a data-v-9098797a="" class="el-link el-link--default is-underline">
+                            <span v-on:click="handleClick" data-v-9098797a="">联系我们</span>
+                        </a>
+
+
+                    <div class="el-overlay" style="z-index: 2001; display: none;">
+                        <div role="dialog" aria-modal="true" aria-label="价格 - 完全免费" aria-describedby="el-id-6420-0" class="el-overlay-dialog"></div>
+                    </div>
+                    <div class="el-overlay" style="z-index: 2002; display: none;">
+                        <div role="dialog" aria-modal="true" aria-label="捐献作者" aria-describedby="el-id-6420-1" class="el-overlay-dialog" style="display: flex;"></div>
+                    </div>
+                    <div class="el-overlay" style="z-index: 2003; display: none;">
+                        <div role="dialog" aria-modal="true" aria-label="联系我们" aria-describedby="el-id-6420-2" class="el-overlay-dialog"></div>
+                    </div>
+                </footer>
+            </section>
+            <div class="el-overlay" style="z-index: 2004; display: none;">
+                <div role="dialog" aria-modal="true" aria-label="向 AI 提问 > " aria-describedby="el-id-6420-3" class="el-overlay-dialog" style="display: flex;"></div>
+            </div>
+        </main>
+
+        <el-dialog :title="'向 AI 提问 >' + uploadName" :visible.sync="dialogTableVisible" width="65%" :close-on-click-modal="false" :close-on-press-escape="false" >
+            <div v-loading="asyLoading" 
+            element-loading-text="分析中"
+            element-loading-spinner="el-icon-loading"
+            element-loading-background="#fff">
+                <el-alert
+                    style="color: #333;"
+                    class="chat-message assistant"
+                    style="margin-bottom:15px;"
+                    :title="summary"
+                    type="info">
+                </el-alert>
+
+                <div >
+                    <div class="chat-message-question" style="margin-bottom:15px;">以下是几个你可能感兴趣的问题：</div>
+
+                    <div class="chat-message-question" style="margin-bottom:15px;" v-for="(item, index) in questions" :key="index">
+                        <el-link type="primary" @click="linkToChat(item)">{{ item }}？</el-link>
+                    </div>
+                    
+                </div>
+
+                <div style="min-height: 15em;max-height: 25em;
+                overflow-y: auto;" id="scroll-to-bottom">
+                    <div v-for="(item,index) in list" :key="index">
+                        <div class="chat-message chat-message-user" v-if="item.user">
+                            <div class="chat-message-row">
+                                <span>{{ item.txt }}</span>
+                            </div>
+                        </div>
+    
+                        <div class="chat-message chat-message-chatgpt" v-else>
+                            <div style="width:50px;height:50px;" v-if="item.isLoading">
+                                <i class="el-icon-loading"></i>                                
+                            </div>
+                            <div class="chat-message-row gpt" v-html="markerHtml(item.txt)" v-else>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                
+                <el-form @submit.native.prevent>
+                    <el-input @keyup.enter.native="onChat()" placeholder="请输入内容" v-model="searchVal" class="input-with-select" >                    
+                        <el-button slot="append" icon="el-icon-s-promotion" @click="onChat()"></el-button>
+                    </el-input>
+                <el-form>
+                
+
+            </div>
+        </el-dialog>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.bootcss.com/vue/2.5.2/vue.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.13/index.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/marked/4.2.12/marked.min.js"></script>
+<link href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.13/theme-chalk/index.css" rel="stylesheet">
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    new Vue({
+      el: '#root',
+      filter: {
+        
+      },
+      data: function () {
+        return {
+          uri: '/api',
+          uploadName: '',
+          sysTitle: '',
+          asyLoading: false,
+          searchVal: '',
+          fileList: [],
+          list : [],
+          token: '',
+          summary: '',
+          questions: [],
+          dialogTableVisible: false,
+          aa: '<p>排名第四的战队WBG取得了10个胜利</p>',
+          name: 'Amy',
+          school: {
+            name: '我要自学网',
+            course: 'ps',
+            url: 'https://www.51zxw.net/'
+          }
+        }
+      },
+      methods: {
+        handleClick: function () {
+            //element-ui 弹窗显示微信群二维码
+            this.$alert('<img src="./static/images/wechat.jpg" width="400" height="350" />', '联系我们', {
+                dangerouslyUseHTMLString: true,
+                confirmButtonText: '确定',
+                callback: action => {
+                }
+            });
+            
+            
+        },
+        scrollBottom: function(element) {
+			element.scroll({ top: element.scrollHeight, behavior: "smooth"})
+		},
+        scoller: function () {
+            let scroll_to_bottom = document.getElementById('scroll-to-bottom');
+            scrollBottom(scroll_to_bottom)
+        },   
+        linkToChat: function (searchVal) {
+            this.onChat(searchVal)
+        },
+        getWords: function(apiResponse) {
+            // 提取摘要
+            this.summary = apiResponse.summary
+            this.questions = apiResponse.questions                   
+                                    
+        },
+        handlePreViewFile() {
+            this.dialogTableVisible = true          
+            this.handleAnalyse() 
+        },
+        // 分析
+        handleAnalyse: function () {
+            var that = this
+            this.asyLoading = true
+            $.post(this.uri + '/doc/analyse', {token: this.token}, function (res) {
+                let jsd = JSON.parse(res.data.questions)  
+                that.asyLoading = false                          
+                that.getWords(jsd)
+            })
+            
+           
+        },
+        uploadText: function (res, file) {
+            this.token = res.data.token   
+            this.uploadName = res.data.filename  
+            this.dialogTableVisible = true          
+            this.handleAnalyse()         
+        },
+        onChat: function (searchVal) {
+            // if (this.isLoading) {
+            //     this.$message.warning('请等待回复..')
+            //     return
+            // }
+            if (!this.searchVal && !searchVal) {
+                this.$message.warning('请输入问题')
+                return
+            }
+            
+            var that = this
+            that.list.push({
+                user: true,
+                txt: searchVal || this.searchVal
+            })
+            that.list.push({
+                user: false,
+                txt: '',
+                isLoading: true
+            })
+            this.isLoading = true
+            var q = searchVal || this.searchVal
+            that.searchVal = ''
+            $.post(this.uri + '/doc/question', {  q: q, token: this.token}, function (res) {     
+                
+                that.$set(that.list, that.list.length - 1, {
+                    user: false,
+                        txt: res.data.answer,
+                        isLoading: false
+                })     
+                that.$nextTick( function () {
+                    that.scoller()
+                })   
+                that.isLoading = false             
+            })
+        },
+        markerHtml: function (val) {            
+            return marked.parse(val)
+        }
+      }
+    });
+</script>
+<style>
+    .logo{
+        /* 固定定位 */
+        position: fixed;
+        /* 定位点为右下角 */
+        left: 100px;
+        top: 20px;
+    }
+    .el-upload-dragger {width: 100%;padding: 0;}
+    .el-upload {width: 100%;}
+    .el-dialog__headerbtn {
+        top: 0;
+        right: 0;
+    }
+    .s-loading {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 4px rgba(0,0,0,.3);
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .chat-message-user {
+        display: flex;    
+        justify-content: flex-end;
+    }
+    .chat-message-row {
+        display: inline-block;
+        background-color: #0a65ef;
+        border: 1px solid #e3e3e3;
+        box-shadow: 0 0 3px #d1d2da;
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .chat-message-chatgpt {
+        display: flex;    
+        justify-content: flex-start;
+    }
+    .chat-message-row.gpt {
+        background-color: #f9f9f9;
+        border: 1px solid #e3e3e3;
+        box-shadow: 0 0 3px #d1d2da;
+        color: #000;
+    }
+    .el-input-group__append {border: 0;}
+    .chat-message {margin-bottom: 15px;}
+    .el-button--default {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .el-icon-thumb {
+        font-size: 16px;
+    }
+</style>
